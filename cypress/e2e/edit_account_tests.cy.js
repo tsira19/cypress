@@ -65,7 +65,7 @@ describe('template spec', () => {
     cy.get('#AddressFrm_country_id option:selected').should('have.text',country)
     cy.get('#AddressFrm_default1').should('be.checked')
   })
-
+ 
   it('Change Password Test', () => {
     const newPassword = 'Tsira111';
     cy.visit('https://automationteststore.com/')
@@ -77,7 +77,7 @@ describe('template spec', () => {
     cy.get('#PasswordFrm_confirm').type(newPassword)
     cy.get('.col-md-12 > .btn-orange').click()
     cy.get('.nav-dash > :nth-child(9) > a').click()
-    
+
     cy.visit('https://automationteststore.com/')
     cy.login(login, newPassword);
     cy.get('#customer_menu_top > :nth-child(1) > .top > .menu_text').should('contain', 'Welcome back')
